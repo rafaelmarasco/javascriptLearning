@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificando Pais</title>
+</head>
+<body>
+    <h1>De onde você é?</h1>
+    <label for="txtpais">País</label>
+    <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Enviar" id="env">
+    <div id="res">Verificando...</div>
+
+    <script>
+        var btn = document.querySelector('input#env')
+        btn.addEventListener ('click', clicar)
+
+        function clicar(){
+            var pais = window.document.querySelector('input#txtpais')
+            var res = document.querySelector('div#res')
+            res.innerHTML = `<p> Você nasceu no ${pais.value} </p>`
+            if (pais.value != 'Brasil'){
+                res.innerHTML += '<p> Você é estranjeiro! </p>'
+            } else {
+                res.innerHTML += '<p> Você é brazuca! </p>'
+            }
+        }
+
+        
+
+    </script>
+</body>
+</html>
